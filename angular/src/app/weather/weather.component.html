@@ -1,0 +1,32 @@
+<div  *ngIf="Weather != undefined" id="MainWeatherContainer">
+    <div>
+        <div>
+            <img  id="WeatherIcon" src="http://openweathermap.org/img/wn/{{Weather.weather[0].icon}}@2x.png">
+            <div id="Temperature">
+                <h1 [ngClass]="{Cold:Weather.main.temp_c<0, Warm:Weather.main.temp_c>25}" 
+                    (click)="TemperatureTypeSwitch()">{{Weather.main.temp}} °{{Weather.main.units}}</h1>
+                <h4>
+                    (Ощущается 
+                    <span [ngClass]="{Cold:Weather.main.feels_like_c<0, Warm:Weather.main.feels_like_c>25}">
+                        {{Weather.main.feels_like}}</span> 
+                    °{{Weather.main.units}})</h4>
+            </div>
+
+        </div>
+        <div id="WeatherDescription">
+            <b>{{Weather.weather[0].main}}</b>
+            <b *ngIf="Weather.snow != undefined">({{Weather.snow["1h"]}}mm)</b>
+            <b *ngIf="Weather.rain != undefined">({{Weather.rain["1h"]}}mm)</b>
+        </div>
+    </div>
+    
+
+    <div id="CityDescription">
+        <h2 id="CityName">{{Weather.name}}</h2>
+    </div>
+    <div id="Additional">
+        <b id="Pressure">{{Weather.main.pressure}} мм</b><br>
+        <b id="Humidity">{{Weather.main.humidity}}%</b><br>
+        <b id="Wind">{{Weather.wind.speed}}м/с</b>
+    </div>
+</div>

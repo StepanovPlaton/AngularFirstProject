@@ -1,0 +1,36 @@
+#MainWeatherContainer { 
+    height: 100%; 
+    width: 100%; 
+}
+
+#WeatherDescription {
+    padding-left: 5px;
+}
+
+#Temperature {
+    position: fixed;
+    top: 0;
+    left: 30%
+}
+.Cold { color: rgb(98, 98, 255); }
+.Warm { color: rgb(255, 98, 98); }
+h4 { position: fixed; top: 30%; }
+
+#CityName { 
+    margin: auto;
+    width: fit-content;
+    text-align: center; 
+
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    
+    width: 40%;
+    height: fit-content;
+}
+
+#Additional {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
+}
